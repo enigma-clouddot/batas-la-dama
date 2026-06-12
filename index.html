@@ -1,0 +1,614 @@
+<<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌟Batas La Dama🌟- Para Maestras Geniales Con Estilo</title>
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🎨</text></svg>">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+        /* FONDO ANIMADO DE NUBES */
+        body {
+            font-family: 'Fredoka', sans-serif;
+            background-color: #e0f2fe;
+            background-image: 
+                radial-gradient(white 15%, transparent 16%),
+                radial-gradient(white 15%, transparent 16%);
+            background-size: 60px 60px;
+            background-position: 0 0, 30px 30px;
+            margin: 0;
+            padding: 0;
+            color: #334155;
+            animation: moverFondo 20s linear infinite;
+        }
+
+        @keyframes moverFondo {
+            from { background-position: 0 0, 30px 30px; }
+            to { background-position: 60px 60px, 90px 90px; }
+        }
+
+        /* ENCABEZADO ESTILO ARCOÍRIS */
+        header {
+            background: linear-gradient(135deg, #ffb7b2, #ffdac1, #e2f0cb);
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+            border-bottom: 5px solid #ff9aa2;
+        }
+
+        header h1 {
+            margin: 0;
+            color: #475569;
+            font-size: 3rem;
+            text-shadow: 3px 3px 0px white;
+        }
+
+        nav {
+            margin-top: 15px;
+        }
+
+        nav a {
+            color: #475569;
+            text-decoration: none;
+            font-weight: 700;
+            margin: 0 20px;
+            font-size: 1.2rem;
+            background: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            box-shadow: 0 4px 0 #cbd5e1;
+            transition: all 0.2s;
+        }
+
+        nav a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 0 #cbd5e1;
+            background: #ffb7b2;
+            color: white;
+        }
+
+        /* BIENVENIDA EMOCIONANTE */
+        #inicio {
+            background: white;
+            text-align: center;
+            padding: 60px 30px;
+            margin: 40px auto;
+            max-width: 850px;
+            border-radius: 30px;
+            border: 4px dashed #ff9aa2;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+
+        #inicio h2 {
+            color: #ff6b6b;
+            font-size: 2.6rem;
+            margin-top: 0;
+        }
+
+        #inicio p {
+            font-size: 1.3rem;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        #inicio button {
+            background: linear-gradient(135deg, #ff9aa2, #ffb7b2);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-family: 'Fredoka', sans-serif;
+            font-size: 1.3rem;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 5px 0 #e07a82;
+            transition: all 0.2s;
+        }
+
+        #inicio button:hover {
+            transform: scale(1.05);
+        }
+
+        /* CARACTERÍSTICAS EN DESTACADO */
+        .caracteristicas {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 20px auto;
+        }
+
+        .info-card {
+            background: #fff;
+            padding: 15px 25px;
+            border-radius: 20px;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 2px solid #e2f0cb;
+        }
+
+        /* TIENDA DE PRODUCTOS */
+        #catalogo {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        #catalogo h2 {
+            color: #6c5ce7;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 0 white;
+        }
+
+        .contenedor-productos {
+            display: flex;
+            justify-content: center;
+            gap: 35px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        /* --- ESTILOS MEJORADOS PARA EL GIRO 3D --- */
+        .bata-tarjeta {
+            perspective: 1000px;
+            background-color: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            width: 320px;
+            height: 540px;
+            position: relative;
+        }
+
+        .tarjeta-interior {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+
+        .tarjeta-interior.volteada {
+            transform: rotateY(180deg);
+        }
+
+        .tarjeta-frente, .tarjeta-atras {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            background-color: white;
+            border: 4px solid #b5ead7;
+            border-radius: 25px;
+            padding: 22px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .tarjeta-frente:hover {
+            border-color: #ffb7b2;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+        }
+
+        .tarjeta-atras {
+            transform: rotateY(180deg);
+            background-color: #fcfdfd;
+            border-color: #ffb7b2;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+        }
+
+        .tarjeta-frente h3, .tarjeta-atras h3 {
+            margin: 5px 0;
+            color: #1e293b;
+            font-size: 1.4rem;
+        }
+
+        .tarjeta-frente p, .tarjeta-atras p {
+            font-size: 0.95rem;
+            color: #64748b;
+            margin: 5px 0;
+            text-align: center;
+        }
+
+        .precio {
+            font-size: 1.5rem;
+            color: #ff6b6b;
+            display: block;
+            margin: 5px 0 12px 0;
+            background: #fff5f5;
+            padding: 6px 0;
+            border-radius: 12px;
+            width: 100%;
+        }
+
+        .bata-tarjeta button {
+            background-color: #9cd9de;
+            color: #1e3a3d;
+            border: none;
+            width: 100%;
+            padding: 12px;
+            font-family: 'Fredoka', sans-serif;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 15px;
+            cursor: pointer;
+            box-shadow: 0 4px 0 #76b9be;
+            transition: all 0.2s ease;
+        }
+
+        .bata-tarjeta button:hover {
+            background-color: #7bcad1;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 0 #5fa3a9;
+        }
+
+        .bata-tarjeta button:active {
+            transform: translateY(2px);
+            box-shadow: none;
+        }
+
+        .btn-regresar {
+            background-color: #ffb7b2 !important;
+            color: #5c2c2a !important;
+            box-shadow: 0 4px 0 #e07a82 !important;
+        }
+        .btn-regresar:hover {
+            background-color: #e07a82 !important;
+            box-shadow: 0 6px 0 #b3565d !important;
+        }
+
+        /* Efecto feedback para las fotos interactivas */
+        .zoom-click {
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+        .zoom-click:hover {
+            transform: scale(1.03);
+            filter: brightness(0.95);
+        }
+
+        /* PIE DE PÁGINA */
+        footer {
+            background: linear-gradient(0deg, #ffdac1 0%, transparent 100%);
+            text-align: center;
+            padding: 60px 20px;
+            margin-top: 80px;
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+            padding: 18px 40px;
+            font-size: 1.4rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            font-family: 'Fredoka', sans-serif;
+            transition: all 0.3s;
+            width: auto !important;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #20ba5a;
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.5);
+        }
+
+        /* ========================================================
+           ESTILOS EXCLUSIVOS DE LA RULETA INTERACTIVA (TRUCADA)
+           ======================================================== */
+        #btn-abrir-ruleta {
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
+            background: linear-gradient(135deg, #ff6b6b, #ff9aa2);
+            color: white;
+            border: 3px solid white;
+            padding: 14px 24px;
+            font-family: 'Fredoka', sans-serif;
+            font-size: 1.05rem;
+            font-weight: bold;
+            border-radius: 40px;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            z-index: 999;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        #btn-abrir-ruleta:hover {
+            transform: scale(1.08) translateY(-3px);
+            box-shadow: 0 14px 28px rgba(0,0,0,0.2);
+            background: linear-gradient(135deg, #ff4747, #ffb7b2);
+        }
+
+        #modal-ruleta {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(4px);
+            justify-content: center;
+            align-items: center;
+            z-index: 100000;
+        }
+
+        .ruleta-contenedor {
+            background: white;
+            padding: 30px;
+            border-radius: 30px;
+            border: 5px solid #b5ead7;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+            max-width: 380px;
+            width: 90%;
+        }
+
+        .ruleta-marco {
+            position: relative;
+            width: 270px;
+            height: 270px;
+            margin: 25px auto;
+        }
+
+        .ruleta-flecha {
+            position: absolute;
+            top: -16px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 16px solid transparent;
+            border-right: 16px solid transparent;
+            border-top: 26px solid #ff6b6b;
+            z-index: 10;
+        }
+
+        #ruleta-circulo {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 6px solid #475569;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+            background: conic-gradient(
+                #ffb7b2 0deg 90deg, 
+                #ffdac1 90deg 180deg, 
+                #e2f0cb 180deg 270deg, 
+                #b5ead7 270deg 360deg
+            );
+            transition: transform 4.5s cubic-bezier(0.15, 0.85, 0.15, 1);
+            position: relative;
+        }
+
+        .texto-cuadrante {
+            position: absolute;
+            font-weight: bold;
+            font-size: 0.85rem;
+            color: #334155;
+            width: 100px;
+            text-align: center;
+        }
+        /* Rotación estratégica de los 4 sectores */
+        .tc1 { top: 45px; left: 115px; transform: rotate(45deg); }
+        .tc2 { top: 115px; left: 135px; transform: rotate(135deg); }
+        .tc3 { top: 155px; left: 55px; transform: rotate(225deg); }
+        .tc4 { top: 80px; left: 25px; transform: rotate(315deg); }
+
+        #btn-girar {
+            background-color: #6c5ce7;
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            font-family: 'Fredoka', sans-serif;
+            font-size: 1.25rem;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 0 #5142c5;
+            margin-top: 10px;
+            width: 100%;
+            transition: all 0.2s;
+        }
+        #btn-girar:hover {
+            background-color: #5142c5;
+            transform: translateY(-2px);
+        }
+        #btn-girar:disabled {
+            background-color: #cbd5e1;
+            box-shadow: none;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        #resultado-ruleta {
+            margin-top: 18px;
+            font-size: 1.15rem;
+            font-weight: bold;
+            color: #ff6b6b;
+            min-height: 28px;
+        }
+    </style>
+</head>
+<body>
+
+
+    <header>
+        <div class="logo">
+            <h1>⭐ℬ𝒶𝓉𝒶𝓈 ℒ𝒶 𝒟𝒶𝓂𝒶⭐</h1>
+        </div>
+        <nav>
+            <a href="#inicio">𝐈𝐧𝐢𝐜𝐢𝐨</a>
+            <a href="#catalogo">𝐌𝐨𝐝𝐞𝐥𝐨𝐬</a>
+            <a href="#contacto">𝐂𝐨𝐧𝐭𝐚𝐜𝐭𝐨o</a>
+        </nav>
+    </header>
+
+    <section id="inicio">
+        <h2>   ¡Batas de Educadora Listas para Enviar! 📦🚚✈️</h2>
+        <p>Distribuimos los diseños más bonitos, cómodos y coloridos para maestras de preescolar. Contamos con stock disponible y envíos rápidos a toda la república por paqueterías, al igual que envíos por Mercado Libre.</p>
+        <br>
+        <a href="#catalogo"><button>✨𝒱𝑒𝓇 ℳ𝑜𝒹𝑒𝓁𝑜𝓈 𝒟𝒾𝓈𝓅𝑜𝓃𝒾𝒷𝓁𝑒𝓈✨</button></a>
+    </section>
+
+    <div class="caracteristicas">
+        <div class="info-card">📦 Envíos a todo México</div>
+        <div class="info-card">🛍️ Compra segura por Mercado Libre</div>
+        <div class="info-card">📲 Grupo de WhatsApp Exclusivo</div>
+        <div class="info-card">⭐ Material de Alta Calidad</div>
+        <div class="info-card">👩🏻‍🏫 Variedad en Diseños</div>
+    </div>
+
+    <section id="catalogo">
+        <h2>⭐ Nuestros Diseños Más Solicitados ⭐</h2>
+        
+        <div class="contenedor-productos">
+            
+            <div class="bata-tarjeta">
+                <div class="tarjeta-interior">
+                    <div class="tarjeta-frente">
+                        <img src="FOTO1.jpg.png" alt="Bata Cuentacuentos" style="width: 100%; height: 270px; object-fit: cover; border-radius: 19px; margin-bottom: 15px;">
+                        <h3>⭐"Vestido Coquette"👗</h3>
+                        <p>𝑺ú𝒑𝒆𝒓 𝒍𝒊𝒏𝒅𝒐, 𝒄ó𝒎𝒐𝒅𝒐 𝒚 𝒂𝒋𝒖𝒔𝒕𝒂𝒃𝒍𝒆. ¡𝑻𝒊𝒆𝒏𝒆 𝒆𝒍 𝒅𝒊𝒔𝒆ñ𝒐 𝒎á𝒔 𝒃𝒐𝒏𝒊𝒕𝒐 𝒚 𝒃𝒐𝒍𝒔𝒂𝒔 𝒑𝒆𝒓𝒇𝒆𝒄𝒕𝒂𝒔 𝒑𝒂𝒓𝒂 𝒈𝒖𝒂𝒓𝒅𝒂𝒓 𝒄𝒐𝒔𝒊𝒕𝒂𝒔!🩷</p>
+                        <span class="precio"><strong>$180 MXN</strong></span>
+                        <button class="btn-voltear">Observar Modelo</button>
+                    </div>
+                    <div class="tarjeta-atras">
+                        <h3>Detalles del Modelo</h3>
+                        <p style="font-size: 0.8rem; color: #64748b; font-style: italic; margin-bottom: 10px;">✨ Haz clic en la foto para pantalla completa</p>
+                        <img src="FOTO11.jpg.png" alt="Detalles Coquette" class="zoom-click" style="width: 100%; height: 250px; object-fit: cover; border-radius: 15px; cursor: pointer; margin-bottom: 15px;">
+                        <button class="btn-regresar">Volver</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bata-tarjeta">
+                <div class="tarjeta-interior">
+                    <div class="tarjeta-frente">
+                        <img src="FOTO2.jpg.png" alt="Bata Arcoíris" style="width: 100%; height: 270px; object-fit: cover; border-radius: 19px; margin-bottom: 15px;">
+                        <h3>⭐"Bata Escolar"🥼</h3>
+                        <p>𝑯𝒆𝒄𝒉𝒂 𝒅𝒆 𝒎𝒖𝒚 𝒃𝒖𝒆𝒏𝒂 𝒕𝒆𝒍𝒂, 𝒖𝒍𝒕𝒓𝒂 𝒇𝒓𝒆𝒔𝒄𝒂 𝒑𝒂𝒓𝒂 𝒒𝒖𝒆 𝒔𝒆 𝒎𝒖𝒆𝒗𝒂𝒏 𝒍𝒊𝒃𝒓𝒆𝒔 𝒕𝒐𝒅𝒐 𝒆𝒍 𝒅í𝒂. 𝑴𝒖𝒚 𝒄ó𝒎𝒐𝒅𝒂, 𝒃𝒐𝒏𝒊𝒕𝒂 𝒚 𝒍𝒊𝒔𝒕𝒂 𝒑𝒂𝒓𝒂 𝒆𝒍 𝒂𝒖𝒍𝒂.🩷</p>
+                        <span class="precio"><strong>$140 MXN</strong></span>
+                        <button class="btn-voltear">Observar Modelo</button>
+                    </div>
+                    <div class="tarjeta-atras">
+                        <h3>Detalles del Modelo</h3>
+                        <p style="font-size: 0.8rem; color: #64748b; font-style: italic; margin-bottom: 10px;">✨ Haz clic en la foto para pantalla completa</p>
+                        <img src="FOTO22.jpg.png" alt="Detalles Bata Escolar" class="zoom-click" style="width: 100%; height: 250px; object-fit: cover; border-radius: 15px; cursor: pointer; margin-bottom: 15px;">
+                        <button class="btn-regresar">Volver</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bata-tarjeta">
+                <div class="tarjeta-interior">
+                    <div class="tarjeta-frente">
+                        <img src="FOTO3.jpg.png" alt="Bata Dino-Amigos" style="width: 100%; height: 270px; object-fit: cover; border-radius: 19px; margin-bottom: 15px;">
+                        <h3>⭐"Medio Mandil"👚</h3>
+                        <p>𝑳𝒊𝒈𝒆𝒓𝒐, 𝒄ó𝒎𝒐𝒅𝒐 𝒚 𝒔ú𝒑𝒆𝒓 𝒑𝒓á𝒄𝒕𝒊𝒄𝒐. 𝑽𝒊𝒆𝒏𝒆 𝒄𝒐𝒏 𝒃𝒐𝒍𝒔𝒂𝒔 𝒆𝒔𝒑𝒂𝒄𝒊𝒐𝒔𝒂𝒔 𝒑𝒂𝒓𝒂 𝒒𝒖𝒆 𝒕𝒆𝒏𝒈𝒂𝒏 𝒔𝒖𝒔 𝒑𝒍𝒖𝒎𝒐𝒏𝒆𝒔 𝒚 𝒈𝒊𝒔𝒆𝒔 𝒔𝒊𝒆𝒎𝒑𝒓𝒆 𝒂 𝒍𝒂 𝒎𝒂𝒏𝒐.🩷</p>
+                        <span class="precio"><strong>$60 MXN</strong></span>
+                        <button class="btn-voltear">Observar Modelo</button>
+                    </div>
+                    <div class="tarjeta-atras">
+                        <h3>Detalles del Modelo</h3>
+                        <p style="font-size: 0.8rem; color: #64748b; font-style: italic; margin-bottom: 10px;">✨ Haz clic en la foto para pantalla completa</p>
+                        <img src="FOTO33.jpg.png" alt="Detalles Medio Mandil" class="zoom-click" style="width: 100%; height: 250px; object-fit: cover; border-radius: 15px; cursor: pointer; margin-bottom: 15px;">
+                        <button class="btn-regresar">Volver</button>
+                    </div>
+                </div>
+            </div>
+
+             <div class="bata-tarjeta">
+                <div class="tarjeta-interior">
+                    <div class="tarjeta-frente">
+                        <img src="FOTO4.jpg.png" alt="Bata Dino-Amigos" style="width: 100%; height: 270px; object-fit: cover; border-radius: 19px; margin-bottom: 15px;">
+                        <h3> ⭐"Chaleco Escolar"🧥</h3>
+                        <p>𝑪𝒐𝒎𝒐𝒅𝒊𝒅𝒂𝒅 𝒕𝒐𝒕𝒂𝒍 𝒚 𝒖𝒏 𝒅𝒊𝒔𝒆ñ𝒐 𝒑𝒂𝒅𝒓í𝒔𝒊𝒎𝒐. 𝑰𝒅𝒆𝒂𝒍 𝒑𝒂𝒓𝒂 𝒆𝒍 𝒅𝒊𝒂𝒓𝒊𝒐, 𝒄𝒐𝒏 𝒃𝒐𝒍𝒔𝒂𝒔 𝒂𝒎𝒑𝒍𝒊𝒂𝒔 𝒒𝒖𝒆 𝒂𝒈𝒖𝒂𝒏𝒕𝒂𝒏 𝒕𝒐𝒅𝒐 𝒆𝒍 𝒓𝒊𝒕𝒎𝒐 𝒅𝒆 𝒍𝒂 𝒆𝒔𝒄𝒖𝒆𝒍𝒂.💙</p>
+                        <span class="precio"><strong>$140 MXN</strong></span>
+                        <button class="btn-voltear">Observar Modelo</button>
+                    </div>
+                    <div class="tarjeta-atras">
+                        <h3>Detalles del Modelo</h3>
+                        <p style="font-size: 0.8rem; color: #64748b; font-style: italic; margin-bottom: 10px;">✨ Haz clic en la foto para pantalla completa</p>
+                        <img src="FOTO44.jpg.png" alt="Detalles Chaleco" class="zoom-click" style="width: 100%; height: 250px; object-fit: cover; border-radius: 15px; cursor: pointer; margin-bottom: 15px;">
+                        <button class="btn-regresar">Volver</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer id="contacto">
+        <h2>¿Lista para hacer tu pedido? 📲🛒</h2>
+        <p>Únete a nuestro grupo de WhatsApp para enterarte de los nuevos modelos en stock antes que nadie o mándanos un mensaje directo para coordinar tu envío por paquetería.</p>
+        <br><br>
+        <a href="https://chat.whatsapp.com/HcRojGr7xZVAbHELP6wrDY" target="_blank">
+            <button class="btn-whatsapp">💬 Unirse al Grupo / Pedir por WhatsApp</button>
+        </a>
+        <br><br><br>
+        <p>© 2026 ⭐Batas La Dama⭐ - Distribuidora Oficial de Batas para Maestras de Preescolar.</p>
+    </footer>
+
+    <div id="modal-pantalla-completa" style="display: none; position: fixed; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(15, 23, 42, 0.95); backdrop-filter: blur(6px); justify-content: center; align-items: center; z-index: 99999;">
+        <span class="modal-cerrar" style="position: absolute; top: 20px; right: 35px; color: #fff; font-size: 55px; font-weight: bold; cursor: pointer; user-select: none; transition: color 0.2s;">&times;</span>
+        <img id="imagen-maximizada" style="margin: auto; display: block; max-width: 90%; max-height: 85vh; object-fit: contain; border-radius: 16px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);">
+    </div>
+    
+
+    <script>
+        // Hacer que giren las tarjetas de los productos
+        document.querySelectorAll('.bata-tarjeta').forEach(tarjeta => {
+            const interior = tarjeta.querySelector('.tarjeta-interior');
+            tarjeta.querySelector('.btn-voltear').addEventListener('click', () => {
+                interior.classList.add('volteada');
+            });
+            tarjeta.querySelector('.btn-regresar').addEventListener('click', () => {
+                interior.classList.remove('volteada');
+            });
+        });
+
+        // Hacer que las fotos traseras abran en grande (Lightbox)
+        const modal = document.getElementById('modal-pantalla-completa');
+        const imgMax = document.getElementById('imagen-maximizada');
+        const btnCerrar = document.querySelector('.modal-cerrar');
+        
+        document.querySelectorAll('.zoom-click').forEach(img => {
+            img.addEventListener('click', function() {
+                modal.style.display = "flex";
+                imgMax.src = this.src;
+            });
+        });
+
+        // Cambiar color de la X al pasar el mouse en el visor
+        btnCerrar.addEventListener('mouseenter', () => btnCerrar.style.color = '#ffb7b2');
+        btnCerrar.addEventListener('mouseleave', () => btnCerrar.style.color = '#fff');
+
+        // Cerrar el modal al dar clic en la X o fuera de la foto
+        btnCerrar.addEventListener('click', () => {
+            modal.style.display = "none";
+        });
+        modal.addEventListener('click', (e) => {
+            if(e.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+        
+
+    </script>
+
+</body>
+</html>
